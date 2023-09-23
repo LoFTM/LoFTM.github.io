@@ -15,6 +15,6 @@ function GetItem() {
 	})
 	  .then(r => r.json())
 	  .then(data => console.log('data returned:', data));
-	document.getElementById("demo").innerHTML=items.name;
+	document.getElementById("demo").innerHTML="changed";
 }
 
