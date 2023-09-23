@@ -1,4 +1,20 @@
+function GetItem() {
+		fetch('https://api.tarkov.dev/graphql', {
+	  method: 'POST',
+	  headers: {
+		'Content-Type': 'application/json',
+		'Accept': 'application/json',
+	  },
+		  body: JSON.stringify({query: `{
+			items(name: "m855a1") {
+				id
+				name
+				shortName
+			}
+		}`})
+	})
+	  .then(r => r.json())
+	  .then(data => console.log('data returned:', data));
+	document.getElementById("demo").innerHTML=items.name;
+}
 
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
